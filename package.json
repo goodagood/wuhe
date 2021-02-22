@@ -1,0 +1,28 @@
+{
+  "name": "wuhe",
+  "version": "0.0.1",
+  "description": "Team learning platform. If time and space is 4D, we connect 4D pieces into history, please note it's human's history.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rollup-buile": "rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goodagood/wuhe.git"
+  },
+  "keywords": [
+    "wuhe",
+    "time_space",
+    "4_dimension_river"
+  ],
+  "author": "wuhe group, andrew",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/goodagood/wuhe/issues"
+  },
+  "homepage": "https://github.com/goodagood/wuhe#readme",
+  "devDependencies": {
+    "rollup": "^2.39.0"
+  }
+}
