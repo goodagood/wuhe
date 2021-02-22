@@ -1,8 +1,8 @@
 # wuhe
 A decentralized team working platform. kickstart on Feb 17, 2021.
 
-Python, Node.js
-
+Python, Node.js, Zeronet, Bitcoin ...
+it's a few keywords we mentioned when we talked it a few days before.
 Zeronet involves many concepts and might connect to different systems such as bitcoin, Tor, Internet anonymous accessing... So it's going to be chanllenging
 
 We start from small steps. 
