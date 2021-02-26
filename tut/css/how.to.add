@@ -1,0 +1,20 @@
+
+how to add CSS to HTML:
+
+<link rel="stylesheet" href="mystyle.css">
+
+
+<style>
+body {
+    background-color: linen;
+  }
+
+  h1 {
+    color: maroon;
+    margin-left: 40px;
+  }
+</style>
+
+
+<h1 style="color:blue;text-align:center;">This is a heading</h1>
+<p style="color:red;">This is a paragraph.</p>

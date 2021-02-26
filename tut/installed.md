@@ -21,5 +21,6 @@ nvm install --lts 14.15.5
 npm install -g express
 npm install -g express-generator
 npm install -g rollup
+npm install -g http-server
 
 # js:
