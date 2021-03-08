@@ -9,19 +9,20 @@ c = conn.cursor()
 # what : a short name, or title
 # theTime : time might be keyword, name the column as 'theTime'.
 #   data type should be compatible SQL DateTime.
-# floatTime : type of REAL, unit is year,
+# floatBc : type of REAL, unit is year, 
+#   0.0 is for event of Christ birthday, 
 #   it has enough range for all time, -1E38 -> 1E38
 #   easy to overpass limit of calendar.
-#   0.0 is for event of Christ birthday, 
 #   300.33 means about 300.33BC
-# bigBangTime : It's text, tell time from the big bang. 
+# in4dSpace : It's text, when and where in 4 dimension space
 c.execute('''CREATE TABLE IF NOT EXISTS event(
     what TEXT,
     story TEXT,
 
     theTime datetime DEFAULT null,
-    floatTime REAL DEFAULT null,
-    bigBangTime TEXT DEFAULT null,
+    floatBc REAL DEFAULT null,
+    in4dSpace TEXT DEFAULT null,
+    universeAge REAL DEFAULT null,
 
     location TEXT DEFAULT null,
     language TEXT DEFAULT null
@@ -34,7 +35,7 @@ c.execute('''CREATE TABLE IF NOT EXISTS event(
 
 
 c.execute("""INSERT INTO event
-    (what, bigBangTime, story)
+    (what, in4dSpace, story)
     VALUES ('Big Bang',
     '0s, zero point of time',
 
