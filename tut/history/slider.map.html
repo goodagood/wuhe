@@ -1,0 +1,122 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.1.1/css/bootstrap-slider.min.css">
+        <link rel="stylesheet" href="slider.css">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.1.1/bootstrap-slider.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="slider.js"></script>
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", function(){
+                var years = _.range(1984, 2016);
+
+                for (i in years) {
+                    var img = $(document.createElement('img'))
+                    img.attr("src", 'https://phosphateviz.files.wordpress.com/2017/02/' + years[i] + '.jpg');
+                    img.addClass('map')
+                    img.addClass(String(years[i]))
+                    if (i == 0) {
+                        img.css({'display': 'Block' })
+                    } else {
+                        img.css({'display': 'None' })
+                    }
+
+                    $('.timelapse').append(img)
+                    console.log(years[i])
+                }
+
+
+                jQuery('#time-slider')
+                    .slider({
+                        min: years[0],
+                        max: years[years.length - 1],
+                        step: 1,
+                        value: 0,
+                        tooltip: 'hide',
+                        ticks: years,
+                        ticks_snap_bounds: 1
+                    })
+                    .on('change', function(e, ui) {
+                        console.log('.' + e.value.newValue)
+
+                        jQuery('.time-slider-display').html(e.value.newValue);
+                        $('.' + e.value.newValue).css({'display': 'Block' })
+                        $('.' + e.value.oldValue).css({'display': 'None' })
+                    });
+
+                $($('.slider-track-low'))
+                    .clone()
+                    .addClass('slider-track-total')
+                    .css({width: '62.5%' })
+                    .appendTo('.slider-track');
+            });
+
+
+        </script>
+
+        <style>
+.time-slider-container {
+    margin: 20px;
+    text-align: center;
+        .slider.slider-horizontal {
+            width: 100%;
+                .slider-tick-container {
+                    display: none !important;
+                }
+                .slider-tick-label-container .slider-tick-label {
+                    &:first-child {
+                        padding-left: 50px;
+                    }
+                    &:last-child {
+                        padding-right: 50px;
+                    }
+                }
+        }
+        .slider-track-total {
+            background-color: #4A89DC;
+            opacity: 0.3;
+        }
+}
+
+.slider.slider-horizontal {
+    width: 90% !important;
+    height: 20px;
+}
+
+.map {
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+        </style>
+    </head>
+    <body>
+        <p style = "text-align: center;
+        font-family: Helvetica;
+        font-size: 10.5pt;
+        font-weight: bold;
+        color: dark gray;
+        background-color: ">
+        TWO DECADES AND FOUR COUNTIES <br />
+        These satellite images track phosphate mines tearing through a section of four counties - Hardee, Polk, Manatee, and Hillsborough - in just the last 20 years.
+        <br/>
+        Use the slider below to view each year from 1984 to 2015.
+        </p>
+
+        <div class="timelapse-container">
+            <div class="timelapse"> 				
+            </div>
+            <div class="time-slider-container">
+                <h3 class="time-slider-display">1984</h3>
+                <input id="time-slider" type="text">
+            </div>
+        </div>
+    </body>
+</html>
+
