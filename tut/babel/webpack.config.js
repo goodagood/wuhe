@@ -12,6 +12,8 @@ module.exports = {
 
     module:{
         //loaders:[  ]
+
+
         rules:[
             {
                 test: /\.css$/i,
@@ -39,9 +41,15 @@ module.exports = {
             },
 
             {
-                test: /\.js$/,
-                loader: 'babel-loader',
+                test: /\.m?js$/,
+                //exclude: /node_modules/,
                 include: __dirname + 'src',
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env',]
+                    }
+                }
             }
         ],
     },

@@ -5,6 +5,9 @@ import styles from './app.css';
 
 import greetings from './robot.js';
 
+//?
+import './babel.es6.al.js';
+
 document.write(greetings("Affirmative", "Dave"));
 document.write("<p> add a p </p>");
 

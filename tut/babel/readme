@@ -1,0 +1,34 @@
+
+# Babel
+
+    error: require(...)   require is not defined
+    --  modules: amd
+
+    error: define is not defined
+    -- npm i -D @babel/plugin-transform-modules-amd
+
+    or:
+    npm install -g browserify
+    browserify input.js > output.js
+
+
+# fuck together Babel and webpack
+
+    you can't use *.babel.js as webpack config file:
+
+    za@za16g:/my/wuhe/tut/babel$ npx webpack  --config  ./webpack.babel.js
+    [webpack-cli] Unable load '/my/wuhe/tut/babel/webpack.babel.js'
+    [webpack-cli] Unable to use specified module loaders for ".babel.js".
+    [webpack-cli] Cannot find module '@babel/register' from '/my/wuhe/tut/babel'
+    [webpack-cli] Cannot find module 'babel-register' from '/my/wuhe/tut/babel'
+    [webpack-cli] Cannot find module 'babel-core/register' from '/my/wuhe/tut/babel'
+    [webpack-cli] Cannot find module 'babel/register' from '/my/wuhe/tut/babel'
+
+    -- change the name it's become ok:
+
+    za@za16g:/my/wuhe/tut/babel$ npx webpack  --config  ./webpack.4babel.js
+    asset babel.es6.al.js 1.92 KiB [compared for emit] (name: main)
+    ./src/babel.es6.al.js 679 bytes [built] [code generated]
+    webpack 5.28.0 compiled successfully in 65 ms
+
+
